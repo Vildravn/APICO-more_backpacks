@@ -11,35 +11,11 @@ function register()
 end
 
 function init()
-    api_set_devmode(true)
-
     define_backpacks()
 
     define_dye_station()
 
-    api_define_command("/mbp", "mbp_command")
-
     return "Success"
-end
-
-function mbp_command(args)
-    if args[1] == "dyes" then
-        api_give_item("backpack1", 1)
-        api_give_item(MOD_NAME .. "_dye_station", 1)
-        for i=1,7 do
-            api_give_item("dye" .. i, 1)
-        end
-    end
-
-    if args[1] == "backpacks" then
-        api_give_item(MOD_NAME .. "_backpack_red", 1)
-        api_give_item(MOD_NAME .. "_backpack_blue", 1)
-        api_give_item(MOD_NAME .. "_backpack_yellow", 1)
-        api_give_item(MOD_NAME .. "_backpack_green", 1)
-        api_give_item(MOD_NAME .. "_backpack_orange", 1)
-        api_give_item(MOD_NAME .. "_backpack_violet", 1)
-        api_give_item(MOD_NAME .. "_backpack_grey", 1)
-    end
 end
 
 function click(button, click_type)
