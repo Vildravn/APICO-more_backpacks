@@ -44,6 +44,7 @@ function click(button, click_type)
                     if menu_link_id == item_link_id then
                         open = api_gp(backpacks[i]["menu_id"], "open")
                         api_toggle_menu(backpacks[i]["menu_id"], not open)
+                        api_sp(highlight_slot, "sprite_ref", (open == false and api_get_sprite("sp_" .. slot_item .. "_open") or api_get_sprite("sp_" .. slot_item)))
                         break
                     end
                 end
