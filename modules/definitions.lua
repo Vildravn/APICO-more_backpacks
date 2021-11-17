@@ -100,7 +100,9 @@ DEF_OBJ_BACKPACK = {
         {76, 63},
         {99, 63}
     },
-    info = {},
+    info = {
+        {"1. Storage Slots", "WHITE"},
+    },
     buttons = {"Help", "Move", "Sort", "Target", "Close"},
     center = true,
     singular = true,
@@ -122,7 +124,12 @@ DEF_OBJ_DYE_STATION = {
         {7, 40, "Input", {"dye1", "dye2", "dye3", "dye4", "dye5", "dye6", "dye7"}},
         {122, 28, "Output"},
         {7, 66}, {30, 66}, {53, 66}, {76, 66}, {99, 66}, {122, 66}}, -- Extra Storage
-    info = {},
+    info = {
+        {"1. Backpack Input", "GREEN"},
+        {"2. Dye Input", "YELLOW"},
+        {"3. Dyed Backpack Output", "RED"},
+        {"4. Extra Storage", "WHITE"},
+    },
     buttons = {"Help", "Move", "Target", "Close"},
     placeable = true,
     tools = {"mouse1", "hammer1"}
