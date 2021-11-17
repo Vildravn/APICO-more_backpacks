@@ -14,7 +14,7 @@ This is a mod for [APICO](https://apico.buzz), a casual sim game about beekeepin
 
 ## Changelog
 
-### 0.2
+### 0.2 (WIP)
 
 * Added text to the info buttons for dyed backpacks and the dyeing station
 * Added a tooltip text to the Dyeing station
