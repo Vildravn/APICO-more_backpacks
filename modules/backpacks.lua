@@ -13,7 +13,8 @@ function define_backpacks()
 
     api_define_menu_object(DEF_OBJ_BACKPACK, "sprites/items/item_backpack_red.png", "sprites/gui/menu_backpack.png", {
         define = "backpack_define",
-        draw = "backpack_draw"
+        draw = "backpack_draw",
+        change = "backpack_change"
     })
 end
 
@@ -51,7 +52,30 @@ function backpack_draw(menu_id)
 
     sx = menu_inst["x"] - cam["x"] + 1
     sy = menu_inst["y"] - cam["y"] + 2
-    api_draw_sprite_ext(spr_backpack_menu, 0, sx, sy, 1, 1, 0, menu_color, 1)
+    --api_draw_sprite_ext(spr_backpack_menu, 0, sx, sy, 1, 1, 0, menu_color, 1)
+end
+
+function backpack_change(menu_id)
+    backpack_slot = api_slot_match(menu_id,{
+        "backpack1",
+        MOD_NAME .. "_backpack_red",
+        MOD_NAME .. "_backpack_blue",
+        MOD_NAME .. "_backpack_yellow",
+        MOD_NAME .. "_backpack_green",
+        MOD_NAME .. "_backpack_orange",
+        MOD_NAME .. "_backpack_violet",
+        MOD_NAME .. "_backpack_grey",
+    }, true)
+
+    if backpack_slot ~= nil then
+        mouse = api_get_mouse_inst()["id"]
+
+        api_sp(mouse, "item", backpack_slot["item"])
+        api_sp(mouse, "count", 0)
+        api_sp(mouse, "stats", backpack_slot["stats"])
+
+        api_slot_clear(backpack_slot["id"])
+    end
 end
 
 function make_backpack(menu_id)
@@ -76,7 +100,7 @@ function make_backpack(menu_id)
         api_sp(new_menu_id, "bp_item_oid", out_slot["item"])
 
         mouse = api_get_mouse_inst()["id"]
-        stats = {bp_link_id = bp_link_value}
+        stats = {bp_link_id = bp_link_value, }
         api_sp(mouse, "item", out_slot["item"])
         api_sp(mouse, "count", 0)
         api_sp(mouse, "stats", stats)
