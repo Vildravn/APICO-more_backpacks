@@ -1,17 +1,61 @@
 function define_dye_station()
+    api_define_sprite("dye_station_color", "sprites/items/item_dye_station_colors.png", 1)
+
     api_define_menu_object(DEF_OBJ_DYE_STATION, "sprites/items/item_dye_station.png", "sprites/gui/menu_dye_station.png", {
         define = "dye_station_define",
         draw = "dye_station_draw",
         tick = "dye_station_tick",
         change = "dye_station_change"
-    })
+    }, "draw_dye_station")
 
     recipe = {
         { item = "paintbrush", amount = 1 },
         { item = "barrel", amount = 1 },
         { item = "planks1", amount = 10}
     }
+
     api_define_recipe("painting", MOD_NAME .. "_dye_station", recipe, 1)
+end
+
+function draw_dye_station(obj_id)
+    obj_inst = api_get_inst(obj_id)
+    spr_dye_station = api_get_sprite("sp_more_backpacks_dye_station")
+    spr_dye_station_color = api_get_sprite("sp_dye_station_color")
+
+    if api_get_highlighted("obj") == obj_id then
+        api_draw_sprite(spr_dye_station, 1, obj_inst["x"], obj_inst["y"])
+    else
+        api_draw_sprite(spr_dye_station, 0, obj_inst["x"], obj_inst["y"])
+    end
+
+    color = nil
+    alpha = 0
+    dye_item = api_get_slot(obj_inst["menu_id"], 2)["item"]
+
+    if dye_item == "dye1" then
+        color = "FLOWER1"
+        alpha = 1
+    elseif dye_item == "dye2" then
+        color = "FLOWER2"
+        alpha = 1
+    elseif dye_item == "dye3" then
+        color = "FLOWER3"
+        alpha = 1
+    elseif dye_item == "dye4" then
+        color = "FLOWER4"
+        alpha = 1
+    elseif dye_item == "dye5" then
+        color = "FLOWER5"
+        alpha = 1
+    elseif dye_item == "dye6" then
+        color = "FLOWER6"
+        alpha = 1
+    elseif dye_item == "dye7" then
+        color = "FLOWER7"
+        alpha = 1
+    end
+
+    api_draw_sprite_ext(spr_dye_station_color, 0, obj_inst["x"], obj_inst["y"], 1, 1, 0, color, alpha)
 end
 
 function dye_station_define(menu_id)
