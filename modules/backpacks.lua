@@ -1,5 +1,3 @@
-spr_backpack_menu = nil
-
 function define_backpacks()
     api_define_item(DEF_ITEM_BACKPACK_RED, "sprites/items/item_backpack_red.png")
     api_define_item(DEF_ITEM_BACKPACK_BLUE, "sprites/items/item_backpack_blue.png")
@@ -9,7 +7,7 @@ function define_backpacks()
     api_define_item(DEF_ITEM_BACKPACK_VIOLET, "sprites/items/item_backpack_violet.png")
     api_define_item(DEF_ITEM_BACKPACK_GREY, "sprites/items/item_backpack_grey.png")
     
-    spr_backpack_menu = api_define_sprite("backpack_menu_inside", "sprites/gui/menu_backpack_inside.png", 1)
+    api_define_sprite("backpack_menu_inside", "sprites/gui/menu_backpack_inside.png", 1)
 
     api_define_menu_object(DEF_OBJ_BACKPACK, "sprites/items/item_backpack_red.png", "sprites/gui/menu_backpack.png", {
         define = "backpack_define",
@@ -52,7 +50,9 @@ function backpack_draw(menu_id)
 
     sx = menu_inst["x"] - cam["x"] + 1
     sy = menu_inst["y"] - cam["y"] + 2
-    --api_draw_sprite_ext(spr_backpack_menu, 0, sx, sy, 1, 1, 0, menu_color, 1)
+
+    spr_backpack_menu = api_get_sprite("sp_backpack_menu_inside")
+    api_draw_sprite_ext(spr_backpack_menu, 0, sx, sy, 1, 1, 0, menu_color, 1)
 end
 
 function backpack_change(menu_id)
