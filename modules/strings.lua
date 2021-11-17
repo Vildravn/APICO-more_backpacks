@@ -1,6 +1,8 @@
 STR_CATEGORY_STORAGE = "Storage"
+STR_CATEGORY_CRAFTING = "Crafting"
 
 STR_DYE_STATION = "Dyeing station"
+STR_DYE_STATION_TOOLTIP = "Used for dyeing backpacks"
 
 STR_BACKPACK_RED_NAME = "Red Backpack"
 STR_BACKPACK_BLUE_NAME = "Blue Backpack"
