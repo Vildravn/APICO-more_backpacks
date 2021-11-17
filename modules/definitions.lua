@@ -3,9 +3,9 @@ DEF_ITEM_BACKPACK_RED = {
     name = STR_BACKPACK_RED_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -14,9 +14,9 @@ DEF_ITEM_BACKPACK_BLUE = {
     name = STR_BACKPACK_BLUE_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -25,9 +25,9 @@ DEF_ITEM_BACKPACK_YELLOW = {
     name = STR_BACKPACK_YELLOW_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -36,9 +36,9 @@ DEF_ITEM_BACKPACK_GREEN = {
     name = STR_BACKPACK_GREEN_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -47,9 +47,9 @@ DEF_ITEM_BACKPACK_ORANGE = {
     name = STR_BACKPACK_ORANGE_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -58,9 +58,9 @@ DEF_ITEM_BACKPACK_VIOLET = {
     name = STR_BACKPACK_VIOLET_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -69,9 +69,9 @@ DEF_ITEM_BACKPACK_GREY = {
     name = STR_BACKPACK_GREY_NAME,
     category = STR_CATEGORY_STORAGE,
     tooltip = STR_BACKPACK_TOOLTIP,
-    shop_key = false,
+    shop_key = true,
     shop_buy = 150,
-    shop_sell = 100,
+    shop_sell = 0,
     singular = true
 }
 
@@ -80,7 +80,7 @@ DEF_OBJ_BACKPACK = {
     name = "Backpack Object",
     category = STR_CATEGORY_STORAGE,
     tooltip = "You're not supposed to have this",
-    shop_key = false,
+    shop_key = true,
     shop_buy = 0,
     shop_sell = 0,
     layout = {
