@@ -66,6 +66,8 @@ function backpack_draw(menu_id)
 
     spr_backpack_menu = api_get_sprite("sp_backpack_menu_inside")
     api_draw_sprite_ext(spr_backpack_menu, 0, sx, sy, 1, 1, 0, menu_color, 1)
+
+    api_draw_slots(menu_id)
 end
 
 function backpack_change(menu_id)
