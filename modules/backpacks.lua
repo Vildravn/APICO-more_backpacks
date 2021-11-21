@@ -2,36 +2,59 @@ BACKPACK_COLOR_TABLE = {
     red = {
         flower = "FLOWER1",
         definition = DEF_ITEM_BACKPACK_RED,
+        id = "backpack_red",
+        name = STR_BACKPACK_RED_NAME,
     },
     blue = {
         flower = "FLOWER2",
         definition = DEF_ITEM_BACKPACK_BLUE,
+        id = "backpack_blue",
+        name = STR_BACKPACK_BLUE_NAME,
     },
     yellow = {
         flower = "FLOWER3",
         definition = DEF_ITEM_BACKPACK_YELLOW,
+        id = "backpack_yellow",
+        name = STR_BACKPACK_YELLOW_NAME,
     },
     green = {
         flower = "FLOWER4",
         definition = DEF_ITEM_BACKPACK_GREEN,
+        id = "backpack_green",
+        name = STR_BACKPACK_GREEN_NAME,
     },
     orange = {
         flower = "FLOWER5",
         definition = DEF_ITEM_BACKPACK_ORANGE,
+        id = "backpack_orange",
+        name = STR_BACKPACK_ORANGE_NAME,
     },
     violet = {
         flower = "FLOWER6",
         definition = DEF_ITEM_BACKPACK_VIOLET,
+        id = "backpack_violet",
+        name = STR_BACKPACK_VIOLET_NAME,
     },
     grey = {
         flower = "FLOWER7",
         definition = DEF_ITEM_BACKPACK_GREY,
+        id = "backpack_grey",
+        name = STR_BACKPACK_GREY_NAME,
     },
 }
 
 function define_backpacks()
     for key, value in pairs(BACKPACK_COLOR_TABLE) do
-        api_define_item(value["definition"], "sprites/items/item_backpack_" .. key .. ".png")
+        api_define_item({
+            id = value["id"],
+            name = value["name"],
+            category = STR_CATEGORY_STORAGE,
+            tooltip = STR_BACKPACK_TOOLTIP,
+            shop_key = true,
+            shop_buy = 150,
+            shop_sell = 0,
+            singular = true
+        }, "sprites/items/item_backpack_" .. key .. ".png")
         api_define_sprite(MOD_NAME .. "_backpack_" .. key .. "_open", "sprites/items/item_backpack_open_" .. key .. ".png", 1)
     end
 
