@@ -22,5 +22,5 @@ jobs:
       - name: Create artifact
         uses: actions/upload-artifact@v3
         with:
-          name: more_backpacks.zip
+          name: more_backpacks
           path: ${{ github.workspace }}/more_backpacks.zip
