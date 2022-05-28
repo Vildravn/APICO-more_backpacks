@@ -43,15 +43,14 @@ DEF_OBJ_DYE_STATION = {
     shop_buy = 0,
     shop_sell = 0,
     layout = {
-        {7, 17, "Input", {"backpack1", MOD_NAME .. "_backpack_red", MOD_NAME .. "_backpack_blue", MOD_NAME .. "_backpack_yellow", MOD_NAME .. "_backpack_green", MOD_NAME .. "_backpack_orange", MOD_NAME .. "_backpack_violet", MOD_NAME .. "_backpack_grey"}},
-        {7, 40, "Input", {"dye1", "dye2", "dye3", "dye4", "dye5", "dye6", "dye7"}},
-        {122, 28, "Output"},
-        {7, 66}, {30, 66}, {53, 66}, {76, 66}, {99, 66}, {122, 66}}, -- Extra Storage
+        {25, 17, "Input", {"backpack1", MOD_NAME .. "_backpack_red", MOD_NAME .. "_backpack_blue", MOD_NAME .. "_backpack_yellow", MOD_NAME .. "_backpack_green", MOD_NAME .. "_backpack_orange", MOD_NAME .. "_backpack_violet", MOD_NAME .. "_backpack_grey"}},
+        {54, 17, "Input", {"dye1", "dye2", "dye3", "dye4", "dye5", "dye6", "dye7"}},
+        {40, 53, "Output"}},
     info = {
         {"1. Backpack Input", "GREEN"},
         {"2. Dye Input", "YELLOW"},
         {"3. Dyed Backpack Output", "RED"},
-        {"4. Extra Storage", "WHITE"},
+        {"4. Variant Buttons", "WHITE"},
     },
     buttons = {"Help", "Move", "Target", "Close"},
     placeable = true,

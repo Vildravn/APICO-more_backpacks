@@ -132,17 +132,23 @@ function make_backpack(menu_id)
     end
 
     if new_menu_id ~= nil then
+        in_slot = api_get_slot(menu_id, 1)
+        dye_slot = api_get_slot(menu_id, 2)        
         out_slot = api_get_slot(menu_id, 3)
 
         api_sp(new_menu_id, "bp_link_id", bp_link_value)
         api_sp(new_menu_id, "bp_color", string.gsub(out_slot["item"], MOD_NAME .. "_backpack_", ""))
 
         mouse = api_get_mouse_inst()["id"]
-        stats = {bp_link_id = bp_link_value, }
+        stats = {bp_link_id = bp_link_value}
         api_sp(mouse, "item", out_slot["item"])
         api_sp(mouse, "count", 0)
         api_sp(mouse, "stats", stats)
         api_play_sound("click")
+
+        api_slot_decr(in_slot["id"])
+        api_slot_decr(dye_slot["id"])
+        api_sp(menu_id, "variant_index", 1)
     end
 
     api_slot_clear(out_slot["id"])
